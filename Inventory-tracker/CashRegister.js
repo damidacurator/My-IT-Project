@@ -76,12 +76,64 @@ function picker(register, item, cart){
         return "Products not available"
     }
 console.log("order", order)
-    return order;
+    return item;
 
 }
-console.log("Your have added: ", picker(cashRegister, "phone", cart) + " to the cart" )
-console.log("Your have added: ", picker(cashRegister, "gamingConsole", cart) + " to the cart" )
-console.log("Your cart is now:", cart )
 
+
+
+function calculateTotalPrice( cart){
+    let totalPrice = 0;
+
+
+    for(key in cart){
+console.log("The total price of your cart is:", totalPrice += cart[key])
+if (totalPrice >= 670){
+    totalPrice = totalPrice - (totalPrice * 0.1);
+    console.log("You have a 10% discount on your purchse, your new discounted price is:", totalPrice);  
+}
+    }
+}
+
+function pay(paymentAmount, totalPrice) {
+    console.log("paymentAmount", paymentAmount)
+    if (paymentAmount >= totalPrice) {
+        let change = paymentAmount - totalPrice;
+        console.log(`Thank you for your purchase! Your change is $${change}.`);
+    } else {
+        console.log("You do not have enough money to purchase the items.");
+    }
+}
+
+
+    
+
+       // for(let i=0; i<cart.length; i++){
+    //     // arr =  [300,150, 200]
+
+    // }
+    // function calculateDiscount(){
+    //     let totalPrice = calculateTotalPrice(cart);
+    //     if(totalPrice > 400){
+    //         totalPrice * 0.9;
+    //     }
+    // }
+
+
+    // add all items in 
+
+
+    // return totalPrice;
+ 
+
+
+
+
+console.log("Your have added: ", picker(cashRegister, "gamingConsole", cart) + " to the cart "  )
+console.log("Your have added: ", picker(cashRegister, "phone", cart) + " to the cart "  )
+console.log("Your have added: ", picker(cashRegister, "smartTv", cart) + " to the cart "  )
+console.log("Your cart is now:", cart )
+console.log("The total price of your cart is:", calculateTotalPrice(cashRegister))
+console.log(pay(700, 603))
 
 
